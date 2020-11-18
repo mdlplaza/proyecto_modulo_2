@@ -33,6 +33,7 @@ app.post("/api/add", function (req, res) {
       dni: req.body.dni,
       nombre: req.body.nombre,
       apellidos: req.body.apellidos,
+      email:req.body.email,
     };
     console.log(alumno);
   
@@ -55,11 +56,10 @@ app.post("/api/add", function (req, res) {
 
   app.delete("/api/delete", function (req, res) {
     const dni = req.body.dni;
-    const nombre = req.body.nombre;
-    const apellidos = req.body.apellidos;
-    const body = req.body;
-    console.log(body);
-    db.collection("alumnos").deleteMany({ dni: dni , nombre: nombre ,  apellidos: apellidos },  function (err, datos) {
+    let alumno = {
+        dni: req.body.dni,
+      };
+    db.collection("alumnos").deleteMany(alumno, function (err, datos) {
       if (err !== null) {
         res.send(err);
       } else {
@@ -67,7 +67,6 @@ app.post("/api/add", function (req, res) {
       }
     });
   });
-  
 
 app.listen(3000);
 

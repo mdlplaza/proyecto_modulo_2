@@ -7,5 +7,81 @@ body{
     display: flex;
     justify-content: space-between;
     background-color: #0053ce;
+    width: 100%;
+}
+.form_container {
+    border:1px solid  #0053ce;
+    width:450px;
+    margin:auto;
+    margin-top: 30px;
+}
+.h1_header{
+    font-weight:bold;
+    font-size:16px;
+    margin-left: 20px;
+}
+ol{
+    list-style:none;
+}
+ol li{
+    padding-bottom:5px;
+}
+ol li label{
+    width:120px;
+    float:left;
+    text-align:left;
+}
+
+.boton {
+    padding:3px;
+    color:#FFFFFF;
+    background-color: #0053ce;
+    border:1px solid #000000;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.delete {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.unsuscribed{
+    display: flex;
+    justify-content: center;
 
 }
+
+footer {
+ 
+    display: flex;
+    justify-content: center;
+}
+.follow-us_links{
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+  width: 450px;
+  height: 340px;
+  margin: 0 auto; 
+
+}
+.card {
+    width: 450px;
+    height: 250px;
+    box-shadow: 0 27px 10px 0 rgba(0, 0, 0, .7), 0 17px 17px 0 rgba(0, 0, 0, .5);
+
+  }
+  .h1_card{
+      display: flex;
+      justify-content: center;
+      font-size: 25px;
+      color:  #0053ce;
+      padding-top: 20px;
+  }

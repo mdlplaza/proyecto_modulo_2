@@ -10,23 +10,51 @@
 
 <body>
 
-<header class="header_container">
+    <header class="header_container">
+        <img src=images/logo_Deusto_es.png>
 
-</header>
-    <div>
-        <h1>Añadir Alumnos</h1>
-        <input type="text" id="dni" placeholder="DNI" />
-        <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="text" id="apellidos" placeholder="Apellidos" />
-        <button onclick="add()">Añadir</button>
-        <button onclick="borrar()">Borrar</button>
-     
+
+    </header>
+
+
+
+    <div class="form_container">
+        <h1 class="h1_header">Formulario de registro</h1>
+        <div class="list">
+            <form onsubmit="add()">
+                <ol>
+                    <li><label>DNI</label><input type="text" id="dni" required pattern="^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$" /></li>
+                    <li><label>Nombre</label><input type="text" id="nombre" /></li>
+                    <li><label>Apellidos</label><input type="text" id="apellidos" /></li>
+                    <li><label>Email</label><input type="email" id="email" /></li>
+                </ol>
+                <div class="btn">
+                    <button class="boton" type="submit">Añadir</button>
+                </div>
+            </form>
+        </div>
     </div>
-    
+
+
+
 
     <div id="div1"></div>
 
+    <footer class="footer">
+        <aside class="follow-us">
+            <h3 class="text-action">Dónde puedes encontrarnos</h3>
+            <nav class="follow-us_links">
+                <a class="" target="_blank" href="https://www.facebook.com/UDeusto/"><img src="images/Facebook.png"></a>
 
+                <a class="" target="_blank" href="https://www.instagram.com/udeusto/"><img
+                        src="images/instagram.png"></a>
+
+                <a class="" target="_blank" href="https://www.linkedin.com/school/deusto/"><img
+                        src="images/linkedin.png"></a>
+            </nav>
+        </aside>
+
+    </footer>
     <script src="./index.js"></script>
 
 </body>
