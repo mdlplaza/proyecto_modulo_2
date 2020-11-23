@@ -6,25 +6,33 @@ function recibirAlumnos() {
             return res.json();
         })
         .then(function (datos) {
-            let alumnos = "";
+            let alumnos = `
+                <div class="container">
+              
+        <table> 
+           <tr>
+           <th>DNI</th>
+           <th>Nombre</th>
+           <th>Apellidos</th>
+           <th>Email</th>
+           </tr>`;
             for (let i = 0; i < datos.length; i++) {
                 alumnos += `
-                <div class="container">
-                <div class="card">
-                <h1 class = "h1_card">${datos[i].nombre}  ${datos[i].apellidos}</h1>
-                <div class = "list_container">
-                ${datos[i].dni}
-                ${datos[i].email}
-                <div class= "delete">
-                <button onclick="borrar('${datos[i].dni}')">Borrar</button>
-                </div>
-                </div>
-                </div>
-                     
-             </div>
-      
-        `;
+                <tr>
+                    <td>${datos[i].dni}</td>
+                    <td>${datos[i].nombre} </td>
+                    <td>${datos[i].apellidos}</td>
+                    <td>${datos[i].email}</td>
+                    <td><i onclick="borrar('${datos[i].dni}')" class="fas fa-trash"></i></td>
+                </tr>`;
             }
+
+            alumnos += `
+           </table >                     
+             </div >
+
+                    `;
+
             document.getElementById("div1").innerHTML = alumnos;
         });
 }
@@ -44,7 +52,7 @@ function add() {
 
     };
 
-    fetch("/api/add", {
+    fetch("/api/alumnos", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -65,7 +73,7 @@ function borrar(dni) {
         dni
     };
 
-    fetch(`/api/delete/`, {
+    fetch(`/api/alumnos`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -80,3 +88,5 @@ function borrar(dni) {
             recibirAlumnos();
         });
 }
+
+
